@@ -1,0 +1,13 @@
+.wholepage {
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+img {
+    display: block;
+}
+
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

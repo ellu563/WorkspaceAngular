@@ -1,0 +1,13 @@
+<div class="wholepage">
+    <h1>{{pagetitle}} {{first_name}}</h1>
+
+    <img alt="item" [src]="itemImageUrl">
+
+    <button (click)="changeImg()" mat-raised-button color="warn">Vaihda kuva</button>
+
+    <div class="slider">
+        <mat-slider aria-label="unit(s)"></mat-slider>
+    </div>
+
+    <input [(ngModel)]="first_name" />
+</div>
