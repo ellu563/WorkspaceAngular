@@ -16,7 +16,7 @@ export class FeedbackComponent implements OnInit {
   }
 
   onInputChange(event: any, q: Question) {
-    if (event.value == 0) {
+    /*if (event.value == 0) {
       q.answer = "Ei vielä arvosteltu";
     }
     else if (event.value == 1) {
@@ -25,7 +25,8 @@ export class FeedbackComponent implements OnInit {
       q.answer = "Ok";
     } else if (event.value == 3) {
       q.answer = "Hyvä";
-    }
+    }*/
+    q.setFeedback(event.value);
   }
 
 }
