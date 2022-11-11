@@ -1,1 +1,9 @@
-
+<div id="container">
+    <div *ngFor="let question of questions">{{question.question}}
+        <div id="slid">
+            <mat-slider min="0" max="3" step="1" value="0" (input)="onInputChange($event, question)"
+                aria-label="unit(s)">
+            </mat-slider>{{question.answer}}
+        </div>
+    </div>
+</div>

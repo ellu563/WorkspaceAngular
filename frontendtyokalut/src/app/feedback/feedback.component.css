@@ -1,0 +1,10 @@
+#container {
+    background-color: lightgreen;
+    margin: 10px;
+    padding: 5px;
+}
+
+#slid {
+    display: block;
+    width: 20%;
+}
