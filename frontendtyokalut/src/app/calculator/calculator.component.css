@@ -1,6 +1,10 @@
+.container {
+    margin: 0 auto;
+    width: 30%;
+}
+
 .calc {
     background: #FC46AA;
-    max-width: 30%;
     text-align: center;
     margin: 10px;
     padding: 20px;
@@ -14,5 +18,5 @@ input {
 }
 
 mat-grid-tile {
-    background: mediumseagreen;
+    background: yellow;
 }
