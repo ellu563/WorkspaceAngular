@@ -15,6 +15,11 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { FormComponent } from './form/form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
     CalculatorComponent,
     FeedbackComponent,
     HelloworldComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    FormComponent
   ],
   imports: [
     AppRoutingModule,
@@ -34,7 +40,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatGridListModule,
     MatMenuModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
