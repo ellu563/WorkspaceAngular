@@ -9,7 +9,7 @@ import { Person } from '../person';
 })
 export class FormComponent implements OnInit {
 
-  person: Person;
+  person: Person; // esitellaan luokan person olio
 
   constructor() {
     this.person = new Person();

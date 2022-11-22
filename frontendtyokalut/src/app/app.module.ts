@@ -19,6 +19,8 @@ import { FormComponent } from './form/form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FeedbackComponent,
     HelloworldComponent,
     ToolbarComponent,
-    FormComponent
+    FormComponent,
+    ReactiveFormComponent
   ],
   imports: [
     AppRoutingModule,
@@ -43,7 +46,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,75 @@
+<div class="container">
+    <h2>Registration form</h2>
+
+    <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+        <!--first name-->
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="first name" formControlName="firstName">
+            <mat-error *ngIf="firstName?.hasError('required')">Enter your first name</mat-error>
+            <mat-error *ngIf="firstName?.hasError('minlength')">Minimum 2 characters required</mat-error>
+            <mat-error *ngIf="firstName?.hasError('pattern')">Must be valid id</mat-error>
+        </mat-form-field>
+
+        <!--last name-->
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="last name" formControlName="lastName">
+            <mat-error *ngIf="lastName?.hasError('required')">Enter your last name</mat-error>
+            <mat-error *ngIf="lastName?.hasError('minlength')">Minimum 2 characters required</mat-error>
+            <mat-error *ngIf="lastName?.hasError('pattern')">Must be valid id</mat-error>
+        </mat-form-field>
+
+        <!--id-->
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="id" formControlName="id">
+            <mat-error *ngIf="id?.hasError('required')">Enter your id</mat-error>
+            <mat-error *ngIf="id?.hasError('minlength')">Minimum 4 characters required</mat-error>
+            <mat-error *ngIf="id?.hasError('pattern')">Must be valid id</mat-error>
+        </mat-form-field>
+
+        <!--email-->
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="email" formControlName="email">
+            <mat-error *ngIf="email?.hasError('required')">Enter your email</mat-error>
+            <mat-error *ngIf="email?.hasError('minlength')">Minimum 4 characters required</mat-error>
+            <mat-error *ngIf="email?.hasError('email')">Must be valid email</mat-error>
+        </mat-form-field>
+
+        <!--userName-->
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="username" formControlName="userName">
+            <mat-error *ngIf="userName?.hasError('required')">Enter your username</mat-error>
+            <mat-error *ngIf="userName?.hasError('minlength')">Minimum 2 characters required</mat-error>
+        </mat-form-field>
+
+        <!--password-->
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="password" formControlName="password" type="password">
+            <mat-error *ngIf="password?.hasError('required')">Enter your password</mat-error>
+            <mat-error *ngIf="password?.hasError('minlength')">Minimum 10 characters required</mat-error>
+            <mat-error *ngIf="password?.hasError('pattern')">Must be valid password</mat-error>
+        </mat-form-field>
+
+        <!--re-enter password-->
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="re-enter your password" formControlName="confirmPassword" type="password"
+                pattern="{{password?.value}}">
+            <mat-error *ngIf="confirmPassword?.hasError('required')">Re-enter your password</mat-error>
+            <mat-error *ngIf="confirmPassword?.hasError('minlength')">Minimum 10 characters required</mat-error>
+            <mat-error *ngIf="confirmPassword?.hasError('pattern')">Does not match with the password</mat-error>
+        </mat-form-field>
+
+        <!--checkbox-->
+        <h2>Accept terms and conditions</h2>
+        <mat-checkbox class="example-margin" formControlName="box">
+            <mat-error *ngIf="box?.hasError('requiredTrue') || box?.touched">
+                Klikkaa boksia
+            </mat-error>
+        </mat-checkbox>
+
+        <!--submit button ENTIIA ONKO TAA TALLEE VAI TULEEKO TOI DISABLED JOHOKI MUUALLE-->
+        <button type="submit" mat-raised-button color="accent" [disabled]="registrationForm.invalid">Submit</button>
+
+    </form>
+
+</div>
