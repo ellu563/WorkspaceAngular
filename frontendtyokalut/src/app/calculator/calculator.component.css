@@ -1,10 +1,12 @@
 .container {
     margin: 0 auto;
     width: 30%;
+    border-radius: 30px;
 }
 
 .calc {
-    background: #FC46AA;
+    background: #F699CD;
+    border-radius: 25px;
     text-align: center;
     margin: 10px;
     padding: 20px;
@@ -15,8 +17,4 @@ input {
     margin: 10px;
     padding: 10px;
     border-radius: 15px;
-}
-
-mat-grid-tile {
-    background: yellow;
 }
