@@ -21,7 +21,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FeedbackService } from './services/feedback.service';
+import { CinemaComponent } from './cinema/cinema.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HelloworldComponent,
     ToolbarComponent,
     FormComponent,
-    ReactiveFormComponent
+    ReactiveFormComponent,
+    CinemaComponent
   ],
   imports: [
     AppRoutingModule,
@@ -47,9 +50,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatExpansionModule
   ],
-  providers: [],
+  providers: [FeedbackService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

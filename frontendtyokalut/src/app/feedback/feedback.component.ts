@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Question } from '../question';
+import { FeedbackService } from '../services/feedback.service';
 
 @Component({
   selector: 'app-feedback',
@@ -8,9 +9,16 @@ import { Question } from '../question';
 })
 export class FeedbackComponent implements OnInit {
 
-  questions: Question[] = [new Question('Kysymys 1'), new Question('Kysymys 2'), new Question('Kysymys 3'), new Question('Kysymys 4')];
+  questions: Question[];
 
-  constructor() { }
+  // ensin kysymykset esiteltiin vaan tässä, nyt ne on siirretty serviceen 
+  // questions: Question[] = [new Question('Kysymys 1'), new Question('Kysymys 2'), new Question('Kysymys 3'), new Question('Kysymys 4')];
+
+  // servicen käyttö laitetaan constructoriin
+  // questionsit haetaan nyt servicestä
+  constructor(service: FeedbackService) {
+    this.questions = service.getData();
+  }
 
   ngOnInit(): void {
   }

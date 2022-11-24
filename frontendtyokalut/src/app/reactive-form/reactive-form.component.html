@@ -1,5 +1,5 @@
 <div class="container">
-    <h2>Registration form</h2>
+    <h2>Reactive form: Registration form</h2>
 
     <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
 
@@ -44,7 +44,9 @@
 
         <!--password-->
         <mat-form-field class="field-full-width">
-            <input matInput placeholder="password" formControlName="password" type="password">
+            <input matInput
+                placeholder="password, minimum ten characters, at least one uppercase letter, one lowercase letter and one number"
+                formControlName="password" type="password">
             <mat-error *ngIf="password?.hasError('required')">Enter your password</mat-error>
             <mat-error *ngIf="password?.hasError('minlength')">Minimum 10 characters required</mat-error>
             <mat-error *ngIf="password?.hasError('pattern')">Must be valid password</mat-error>
@@ -63,7 +65,7 @@
         <h2>Accept terms and conditions</h2>
         <mat-checkbox class="example-margin" formControlName="box">
             <mat-error *ngIf="box?.hasError('requiredTrue') || box?.touched">
-                Klikkaa boksia
+                You must accept the terms and conditions
             </mat-error>
         </mat-checkbox>
 

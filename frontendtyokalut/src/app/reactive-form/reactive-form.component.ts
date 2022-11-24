@@ -12,7 +12,7 @@ export class ReactiveFormComponent implements OnInit {
 
   constructor() {
     this.registrationForm = new FormGroup({
-      firstName: new FormControl('Anna', [
+      firstName: new FormControl("", [
         Validators.required,
         Validators.minLength(2),
         Validators.pattern("^[a-zA-Z]*$")
@@ -25,7 +25,7 @@ export class ReactiveFormComponent implements OnInit {
       id: new FormControl("", [
         Validators.required,
         Validators.minLength(4),
-        // regex henkilotunnukselle
+        // regex henkilotunnukselle huom. lisätty kaksi kenoviivaa aina viivoihin jotta toimii
         Validators.pattern("^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([0-9]\\d\+|\\d\\d-|[0-9]\\dA)\\d{3}[\\dA-Z]$")
       ]),
       email: new FormControl("", [
@@ -45,6 +45,7 @@ export class ReactiveFormComponent implements OnInit {
       confirmPassword: new FormControl("", [
         Validators.required,
         Validators.minLength(10)
+        // pattern html:ssä
       ]),
       box: new FormControl(false, [
         Validators.requiredTrue
