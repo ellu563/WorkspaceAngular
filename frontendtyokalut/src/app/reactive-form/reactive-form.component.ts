@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators, CheckboxControlValueAccessor } from '@angular/forms';
 
+/* Reactive form, luodaan FormGroupin avulla, oikeellisuuden tarkistukset ja virheidenkäsittely ts.luokassa */
+
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
@@ -25,7 +27,7 @@ export class ReactiveFormComponent implements OnInit {
       id: new FormControl("", [
         Validators.required,
         Validators.minLength(4),
-        // regex henkilotunnukselle huom. lisätty kaksi kenoviivaa aina viivoihin jotta toimii
+        // regex henkilotunnukselle huom. lisätty kaksi kenoviivaa aina \ viivoihin jotta toimi
         Validators.pattern("^(0[1-9]|[12]\\d|3[01])(0[1-9]|1[0-2])([0-9]\\d\+|\\d\\d-|[0-9]\\dA)\\d{3}[\\dA-Z]$")
       ]),
       email: new FormControl("", [

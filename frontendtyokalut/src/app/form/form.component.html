@@ -3,7 +3,9 @@
 
     <form (ngSubmit)="onSubmit(form1)" #form1="ngForm">
 
-        <!--lomake validoidaan nyt: required, minlength, pattern arvoilla-->
+        <!--Lomake validoidaan nyt: required, minlength, pattern arvoilla, ja input elementissä
+        käytetään ngModel tietokytkentää [(ngModel)]="person.firstName", eli sidotaan kaksisuuntaisesti.
+        Validointi tehdään nyt input määrityksen sisällä, ja hasErrorilla voidaan laittaa virheilmoitus-->
 
         <!--first name, regex etta on kirjaimia-->
         <mat-form-field>

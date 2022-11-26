@@ -6,6 +6,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { FormComponent } from './form/form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
+// reitit laitetaan routes taulukkoon, ja nyt ne ovat myös toolbarissa
 const routes: Routes = [
   { path: '', redirectTo: '/calculator', pathMatch: 'full' },
   { path: 'calculator', component: CalculatorComponent },

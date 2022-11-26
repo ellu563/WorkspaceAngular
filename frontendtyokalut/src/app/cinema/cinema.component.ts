@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CinemaService } from '../services/cinema.service';
 
+/* Haetaan Finnkinon rajapinnasta elokuvia ja uutisia, kommunikaatio rajapintaan tapahtuu HTTP pyyntöjen avulla */
+
 @Component({
   selector: 'app-cinema',
   templateUrl: './cinema.component.html',

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+/* Laskin */
+
 @Component({
   selector: 'app-calculator',
   templateUrl: './calculator.component.html',
@@ -17,8 +19,8 @@ export class CalculatorComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  // laskutoimitus
   addValue(btn: string): void {
-
     if (btn == '=') {
       try {
         this.result = eval(this.result);

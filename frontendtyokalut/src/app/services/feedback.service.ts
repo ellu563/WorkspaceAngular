@@ -15,10 +15,12 @@ export class FeedbackService {
 
   constructor() {
     console.log("toimiiko");
+    // kysymykset ovat taalla taulukossa
     this.questions = [new Question('Kysymys 1'), new Question('Kysymys 2'), new Question('Kysymys 3'), new Question('Kysymys 4')];
   }
 
   getData(): any {
+    // palautetaan kysymykset
     return this.questions;
   }
 }

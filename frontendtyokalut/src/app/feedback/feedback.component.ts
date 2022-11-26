@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Question } from '../question';
 import { FeedbackService } from '../services/feedback.service';
 
+/* Feedback-kysely/Palautesivu, jossa voi valita slideristä haluamansa valinnan esim: hyvä, ok, huono
+   tehty sitä varten Question luokka */
+
 @Component({
   selector: 'app-feedback',
   templateUrl: './feedback.component.html',

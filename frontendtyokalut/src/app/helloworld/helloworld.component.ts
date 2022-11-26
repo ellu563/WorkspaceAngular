@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+/* Yksinkertainen sivu, jossa voi vaihtaa kuvan napista painamalla */
+
 @Component({
   selector: 'app-helloworld',
   templateUrl: './helloworld.component.html',
