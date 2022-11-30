@@ -1,13 +1,13 @@
 <mat-accordion>
-    <mat-expansion-panel>
+    <mat-expansion-panel *ngFor="let item of cinemaData$ | async">
         <mat-expansion-panel-header>
             <mat-panel-title>
-                Otsikko
+                <div>{{item.PublishDate}}</div>
             </mat-panel-title>
             <mat-panel-description>
-                Avaa sisältö
+                {{item.Title}}
             </mat-panel-description>
         </mat-expansion-panel-header>
-        Tänne tulee sisalto
+        <img src="{{item.ImageURL}}">
     </mat-expansion-panel>
 </mat-accordion>

@@ -24,6 +24,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FeedbackService } from './services/feedback.service';
 import { CinemaComponent } from './cinema/cinema.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatInputModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [FeedbackService],
   bootstrap: [AppComponent]
