@@ -3,7 +3,11 @@
         <mat-icon>menu</mat-icon>
     </button>
     Front-end tyokalut
+    <div class="right-nav">
+        <button mat-button><a routerLink="/login" routerLinkActive="active">Signin</a></button>
+    </div>
 </mat-toolbar>
+
 
 <mat-menu #menu="matMenu">
     <button mat-menu-item><a routerLink="/calculator" routerLinkActive="active">
@@ -20,5 +24,12 @@
         </a></button>
     <button mat-menu-item><a routerLink="/cinema" routerLinkActive="active">
             Finnkino news
+        </a></button>
+    <button mat-menu-item><a routerLink="/login" routerLinkActive="active">
+            Login
+        </a></button>
+    <!--ei normaalisti näkyvissä-->
+    <button mat-menu-item><a routerLink="/admin" routerLinkActive="active">
+            Admin
         </a></button>
 </mat-menu>

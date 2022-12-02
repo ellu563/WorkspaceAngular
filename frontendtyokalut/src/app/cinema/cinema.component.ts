@@ -13,6 +13,9 @@ export class CinemaComponent implements OnInit {
 
   public cinemaData$: Observable<any>;
 
+  // käytetään html:ssä
+  searchTerm: string = "";
+
   // muuttujan kautta saadaan servicen palvelut
   constructor(private cinemaService: CinemaService) {
     this.cinemaData$ = this.cinemaService.getData();

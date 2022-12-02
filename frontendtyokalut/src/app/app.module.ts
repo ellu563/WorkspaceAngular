@@ -25,6 +25,9 @@ import { FeedbackService } from './services/feedback.service';
 import { CinemaComponent } from './cinema/cinema.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HttpClientModule } from '@angular/common/http';
+import { NewsFilterPipe } from './pipes/news-filter.pipe';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,10 @@ import { HttpClientModule } from '@angular/common/http';
     ToolbarComponent,
     FormComponent,
     ReactiveFormComponent,
-    CinemaComponent
+    CinemaComponent,
+    NewsFilterPipe,
+    LoginComponent,
+    AdminComponent
   ],
   imports: [
     AppRoutingModule,

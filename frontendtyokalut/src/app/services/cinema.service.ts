@@ -17,7 +17,7 @@ export class CinemaService {
 
   // Observable hoitaa asynkronisen operaation
   getData(): Observable<any> {
-    // http pyyntö
+    // http pyyntö huom. httpClient
     return this.httpClient.get(this.url, { responseType: 'text' })
       .pipe(map(response => {
 
@@ -29,7 +29,7 @@ export class CinemaService {
           explicitArray: false,
           mergeAttrs: true
         }, function (err: any, result: any) {
-          console.log(JSON.stringify(result.News.NewsArticle));
+          // console.log(JSON.stringify(result.News.NewsArticle));
           newsData = result.News.NewsArticle;
         });
 
@@ -37,6 +37,7 @@ export class CinemaService {
       }));
   }
 
+  // erillinen funktio, jolla testattiin testidataa
   getTestData(): Observable<any> {
     return of(this.testData);
   }
