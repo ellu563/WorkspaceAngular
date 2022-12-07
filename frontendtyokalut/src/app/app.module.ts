@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -28,6 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewsFilterPipe } from './pipes/news-filter.pipe';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { AdminComponent } from './admin/admin.component';
     MatCheckboxModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase') as
+    ModuleWithProviders<AngularFireModule>,
+    AngularFireAuthModule
   ],
   providers: [FeedbackService],
   bootstrap: [AppComponent]

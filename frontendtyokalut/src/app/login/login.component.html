@@ -1,40 +1,27 @@
 <div class="container">
-    <form (ngSubmit)="onSubmit(form1)" #form1="ngForm">
+    <form [formGroup]="registrationForm" (ngSubmit)="login()">
 
         <h2>Login</h2>
 
-        <!--voi tehä service luokkaan asti-->
-
-        <!--email yksinkertainen-->
-        <mat-form-field>
-            <input matInput placeholder="Enter your email" type="email" name="email" required>
+        <!--email, reactive form-->
+        <mat-form-field class="field-full-width">
+            <input matInput placeholder="email" formControlName="email">
+            <mat-error *ngIf="email?.hasError('required')">Enter your email</mat-error>
+            <mat-error *ngIf="email?.hasError('minlength')">Minimum 4 characters required</mat-error>
+            <mat-error *ngIf="email?.hasError('email')">Must be valid email</mat-error>
         </mat-form-field>
 
-        <!--password yksinkertainen-->
-        <mat-form-field>
-            <input matInput placeholder="Password" type="password" name="password" required>
-        </mat-form-field>
-
-        <!--email, regex sahkopostille-->
-        <mat-form-field>
-            <input matInput placeholder="email" name="email" [(ngModel)]="person.email" #email="ngModel" required
-                minlength="5" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$">
-            <mat-error *ngIf="email.hasError('required')">Enter your email</mat-error>
-            <mat-error *ngIf="email.hasError('minlength')">Minimum 5 characters required</mat-error>
-            <mat-error *ngIf="email.hasError('pattern')">Must be valid email</mat-error>
-        </mat-form-field>
-
-        <!--password, regex: min 10 kirjainta, yksi iso kirjain, yksi pieni kirjain, ja yksi numero-->
-        <mat-form-field>
+        <!--password-->
+        <mat-form-field class="field-full-width">
             <input matInput
                 placeholder="password, minimum ten characters, at least one uppercase letter, one lowercase letter and one number"
-                name="password1" #pwrd="ngModel" [(ngModel)]="person.password" type="password" required
-                pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{10,}$">
-            <mat-error *ngIf="pwrd.hasError('required')">Enter your password</mat-error>
-            <mat-error *ngIf="pwrd.hasError('pattern')">Must be valid password</mat-error>
+                formControlName="password" type="password">
+            <mat-error *ngIf="password?.hasError('required')">Enter your password</mat-error>
+            <mat-error *ngIf="password?.hasError('minlength')">Minimum 10 characters required</mat-error>
+            <mat-error *ngIf="password?.hasError('pattern')">Must be valid password</mat-error>
         </mat-form-field>
 
-        <button type="submit" mat-raised-button color="accent" [disabled]="form1.invalid"
+        <button type="submit" mat-raised-button color="accent" [disabled]="registrationForm.invalid"
             (click)="login()">Login</button>
 
         <button type="submit" mat-raised-button color="accent" (click)="goBack()">Cancel</button>

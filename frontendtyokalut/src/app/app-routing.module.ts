@@ -7,6 +7,7 @@ import { FeedbackComponent } from './feedback/feedback.component';
 import { FormComponent } from './form/form.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { AuthGuard } from './shared/auth.guard';
 
 // reitit laitetaan routes taulukkoon, ja nyt ne ovat myös toolbarissa
 const routes: Routes = [
@@ -17,7 +18,7 @@ const routes: Routes = [
   { path: 'reactive-form', component: ReactiveFormComponent },
   { path: 'cinema', component: CinemaComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminComponent }
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] }
 ];
 
 @NgModule({
