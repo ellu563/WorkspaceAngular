@@ -17,13 +17,10 @@ export class LoginComponent implements OnInit {
     this.registrationForm = new FormGroup({
       email: new FormControl("elluhaloo@gmail.com", [
         Validators.required,
-        Validators.minLength(4),
         Validators.email
       ]),
-      password: new FormControl("", [
-        Validators.required,
-        Validators.minLength(10),
-        Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{10,}$"),
+      password: new FormControl("Perunaperuna666", [
+        Validators.required
       ])
     });
   }

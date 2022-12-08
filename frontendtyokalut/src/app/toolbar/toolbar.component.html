@@ -3,8 +3,17 @@
         <mat-icon>menu</mat-icon>
     </button>
     Front-end tyokalut
-    <div class="right-nav">
-        <button mat-button><a routerLink="/login" routerLinkActive="active">Signin</a></button>
+    <div class="signin-toolbar">
+        <div class="sign-in">
+            <button mat-button><a routerLink="/login" routerLinkActive="active"
+                    *ngIf="!(userEmail$ | async)">{{loginText}}</a></button>
+            <!--ngIf jos ehto toteutuu-->
+        </div>
+        <div class="sign-out">
+            <div *ngIf="(userEmail$ | async)">
+                <button mat-button (click)="logggOut()">{{logOut}}</button>{{userEmail$ | async}}
+            </div>
+        </div>
     </div>
 </mat-toolbar>
 

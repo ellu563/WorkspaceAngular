@@ -7,18 +7,13 @@
         <mat-form-field class="field-full-width">
             <input matInput placeholder="email" formControlName="email">
             <mat-error *ngIf="email?.hasError('required')">Enter your email</mat-error>
-            <mat-error *ngIf="email?.hasError('minlength')">Minimum 4 characters required</mat-error>
             <mat-error *ngIf="email?.hasError('email')">Must be valid email</mat-error>
         </mat-form-field>
 
         <!--password-->
         <mat-form-field class="field-full-width">
-            <input matInput
-                placeholder="password, minimum ten characters, at least one uppercase letter, one lowercase letter and one number"
-                formControlName="password" type="password">
+            <input matInput placeholder="password" formControlName="password" type="password">
             <mat-error *ngIf="password?.hasError('required')">Enter your password</mat-error>
-            <mat-error *ngIf="password?.hasError('minlength')">Minimum 10 characters required</mat-error>
-            <mat-error *ngIf="password?.hasError('pattern')">Must be valid password</mat-error>
         </mat-form-field>
 
         <button type="submit" mat-raised-button color="accent" [disabled]="registrationForm.invalid"
