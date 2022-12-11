@@ -9,14 +9,19 @@ import { QuestionsService } from '../services/questions.service';
 export class AdminComponent implements OnInit {
 
   dataSource: Array<any>;
-  editing: boolean;
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  editing: boolean = false;
 
   constructor(private qData: QuestionsService) {
-    this.editing = false;
     this.dataSource = this.qData.getQuestions();
   }
 
   ngOnInit(): void {
   }
+
+  public action(row: any) {
+    this.editing = true;
+  }
+
 
 }

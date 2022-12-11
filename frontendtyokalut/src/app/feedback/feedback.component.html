@@ -1,9 +1,11 @@
 <div class="container">
     <h2>Arvostele kysymykset</h2>
+    <!--kaydaan lapi questions-->
     <div *ngFor="let question of questions">{{question.question}}
         <div class="slid">
             <mat-slider min="0" max="3" step="1" value="0" (input)="onInputChange($event, question)"
                 aria-label="unit(s)">
+                <!--viitataan question luokan answeriin-->
             </mat-slider>{{question.answer}}
         </div>
     </div>

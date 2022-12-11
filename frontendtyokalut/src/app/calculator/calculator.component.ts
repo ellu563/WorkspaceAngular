@@ -11,6 +11,7 @@ export class CalculatorComponent implements OnInit {
 
   result: string = "";
 
+  // buttonit on taulukossa
   buttons: string[] =
     ['7', '8', '9', '/', '4', '5', '6', '*', '1', '2', '3', '-', 'C', '0', '+', '='];
 

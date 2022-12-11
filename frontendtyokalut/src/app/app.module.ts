@@ -19,6 +19,7 @@ import { FormComponent } from './form/form.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FeedbackService } from './services/feedback.service';
@@ -65,7 +66,8 @@ import { environment } from 'src/environments/environment';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase') as
     ModuleWithProviders<AngularFireModule>,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    MatTableModule
   ],
   providers: [FeedbackService],
   bootstrap: [AppComponent]

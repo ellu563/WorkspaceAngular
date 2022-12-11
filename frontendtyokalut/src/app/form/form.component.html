@@ -42,7 +42,7 @@
             <mat-error *ngIf="email.hasError('pattern')">Must be valid email</mat-error>
         </mat-form-field>
 
-        <!--user name-->
+        <!--user name, vahintaan 6 merkkia-->
         <mat-form-field>
             <input matInput placeholder="username" name="userName" [(ngModel)]="person.userName" #userName="ngModel"
                 required minlength="6" required>
@@ -60,7 +60,7 @@
             <mat-error *ngIf="pwrd.hasError('pattern')">Must be valid password</mat-error>
         </mat-form-field>
 
-        <!--confirm password, sidottu tuolla patterinilla tuohon aiempaan salasanaan-->
+        <!--confirm password, sidottu tuolla patternilla tuohon aiempaan salasanaan-->
         <mat-form-field>
             <input matInput placeholder="confirm password" name="password2" [(ngModel)]="person.confirmP" required
                 #password2="ngModel" pattern="{{pwrd.value}}" type="password">

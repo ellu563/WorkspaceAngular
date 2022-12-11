@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   registrationForm: FormGroup;
 
-  // injektoidaan router komponenttiin, jotta saadaan se käyttöön (näkee reitit)
+  // injektoidaan router komponenttiin, jotta saadaan se käyttöön (näkee reitit) 
   constructor(public router: Router, public authService: AuthService) {
     this.registrationForm = new FormGroup({
       email: new FormControl("elluhaloo@gmail.com", [
@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
   login() {
     // eli buttonista mennään admin näkymään
     // this.router.navigate(['admin']);
-    this.authService.login(this.registrationForm.value.email, this.registrationForm.value.password); // nuo pitäisi jotenkin saada sieltä html puolelta
+
+    this.authService.login(this.registrationForm.value.email, this.registrationForm.value.password);
 
     /*this.registrationForm.markAsPristine();
     console.log('ei mitaan koha testailen login nappia');

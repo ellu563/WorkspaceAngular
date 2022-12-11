@@ -30,8 +30,8 @@ export class AuthService {
         this.router.navigate(['admin']);
       })
       .catch((error) => {
-        // console.log("error error")
         console.log(error.message)
+        alert("Wrong credentials")
       });
   }
 

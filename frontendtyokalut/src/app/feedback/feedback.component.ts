@@ -3,7 +3,7 @@ import { Question } from '../question';
 import { FeedbackService } from '../services/feedback.service';
 
 /* Feedback-kysely/Palautesivu, jossa voi valita slideristä haluamansa valinnan esim: hyvä, ok, huono
-   tehty sitä varten Question luokka */
+   tehty sitä varten Question luokka, ja feedback service */
 
 @Component({
   selector: 'app-feedback',
