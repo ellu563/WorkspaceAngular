@@ -9,7 +9,7 @@ import { QuestionsService } from '../services/questions.service';
 export class AdminComponent implements OnInit {
 
   dataSource: Array<any>;
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['position', 'name'];
   editing: boolean = false;
 
   constructor(private qData: QuestionsService) {
