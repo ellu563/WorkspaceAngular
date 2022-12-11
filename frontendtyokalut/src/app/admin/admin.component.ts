@@ -19,9 +19,4 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public action(row: any) {
-    this.editing = true;
-  }
-
-
 }
