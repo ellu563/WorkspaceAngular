@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormBuilder, Validators, CheckboxControlValueAccessor } from '@angular/forms';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, FormGroupDirective, FormBuilder, Validators, CheckboxControlValueAccessor } from '@angular/forms';
 
 /* Reactive form, luodaan FormGroupin avulla, oikeellisuuden tarkistukset ja virheidenkäsittely ts.luokassa */
 
@@ -8,6 +8,7 @@ import { FormControl, FormGroup, FormBuilder, Validators, CheckboxControlValueAc
   templateUrl: './reactive-form.component.html',
   styleUrls: ['./reactive-form.component.css']
 })
+
 export class ReactiveFormComponent implements OnInit {
 
   registrationForm: FormGroup;
@@ -39,12 +40,12 @@ export class ReactiveFormComponent implements OnInit {
         Validators.required,
         Validators.minLength(2)
       ]),
-      password: new FormControl("", [
+      password: new FormControl("Muussi888888888", [
         Validators.required,
         Validators.minLength(10),
         Validators.pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{10,}$"),
       ]),
-      confirmPassword: new FormControl("", [
+      confirmPassword: new FormControl("Muussi888888888", [
         Validators.required,
         Validators.minLength(10)
         // pattern html:ssä
@@ -60,13 +61,11 @@ export class ReactiveFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.registrationForm.markAsPristine();
-    console.log('registrationForm.value:' + this.registrationForm.value);
-    console.log('registrationForm.value:' + this.registrationForm.value.firstName);
-    console.log('registrationForm.valid:' + this.registrationForm.valid);
+    console.log(this.registrationForm.value);
+    console.log('First name: ' + this.registrationForm.value.firstName);
+    // this.registrationForm.markAsPristine();
     this.registrationForm.reset();
   }
-
 
   get firstName() {
     return this.registrationForm.get('firstName');

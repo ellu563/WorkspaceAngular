@@ -17,7 +17,11 @@ export class FormComponent implements OnInit {
   }
 
   onSubmit(e: any) {
-    console.log(e.value.firstName);
+    console.log("etunimi: " + e.value.firstName);
+    console.log("sukunimi: " + e.value.lastName);
+    console.log("henkilotunnus: " + e.value.id);
+    console.log("sahkoposti " + e.value.email);
+    console.log("kayttajanimi: " + e.value.userName);
   }
 
   ngOnInit(): void {

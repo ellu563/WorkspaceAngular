@@ -1,7 +1,7 @@
 <div class="container">
     <h2>Template driven form: Registration form</h2>
 
-    <form (ngSubmit)="onSubmit(form1)" #form1="ngForm">
+    <form #form1="ngForm" (ngSubmit)="onSubmit(form1); form1.resetForm()">
 
         <!--Lomake validoidaan nyt: required, minlength, pattern arvoilla, ja input elementissä
         käytetään ngModel tietokytkentää [(ngModel)]="person.firstName", eli sidotaan kaksisuuntaisesti.
@@ -71,13 +71,10 @@
         <!--checkbox-->
         <h2>Accept terms and conditions</h2>
         <mat-checkbox class="example-margin" name="box" #box="ngModel" [(ngModel)]="person.box" required>
-            <mat-error *ngIf="box?.hasError('requiredTrue') || box?.touched">You must accept the terms and conditions
-            </mat-error>
+            <mat-error *ngIf="box?.touched && box?.invalid">You must accept terms and conditions</mat-error>
         </mat-checkbox>
 
-        <button type="submit" mat-raised-button color="accent" [disabled]="form1.invalid"
-            (click)="form1.reset()">Submit</button>
-        <!--reset tyhjentaa sen nyt kun tieto ei mene viela mihinkaan-->
+        <button type="submit" mat-raised-button color="accent" [disabled]="form1.invalid">Submit</button>
 
     </form>
 </div>

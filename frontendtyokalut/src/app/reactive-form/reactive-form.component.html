@@ -64,7 +64,7 @@
         <!--checkbox-->
         <h2>Accept terms and conditions</h2>
         <mat-checkbox class="example-margin" formControlName="box">
-            <mat-error *ngIf="box?.hasError('requiredTrue') || box?.touched">
+            <mat-error *ngIf="box?.hasError('requiredTrue') || box?.touched && box?.invalid">
                 You must accept the terms and conditions
             </mat-error>
         </mat-checkbox>
