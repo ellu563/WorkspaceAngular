@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatCheckboxChange } from '@angular/material/checkbox';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Buyer } from '../buyer';
@@ -13,6 +14,7 @@ export class TicketsComponent implements OnInit {
 
   buyer: Buyer;
 
+  /* VANHA
   buttons: string[] =
     ['+', '-'];
 
@@ -21,12 +23,13 @@ export class TicketsComponent implements OnInit {
 
   buttons2: string[] =
     ['+', '-'];
+  */
 
   basicTicket: number = 16;
   studentTicket: number = 10;
   seniorTicket: number = 8;
 
-  isChecked: boolean = false;
+  // isChecked: boolean = false;
 
   constructor(private ticketService: TicketService, public router: Router) {
 
@@ -78,8 +81,9 @@ export class TicketsComponent implements OnInit {
     }
   }
 
-  checkboxChecked() {
-    if (this.isChecked == true) {
+  // korjattu, huom. ongelma että ottaa kokoajan uudelleen hiiren klikkauksesta
+  onChange(ob: MatCheckboxChange) {
+    if (ob.checked == true) {
       this.buyer.finalPrice = this.buyer.finalPrice * 0.85;
     }
   }

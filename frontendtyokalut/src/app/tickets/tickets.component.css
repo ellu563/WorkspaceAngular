@@ -1,4 +1,4 @@
-.container {
+.big-container {
     margin: 20px;
     padding: 30px;
 }
@@ -7,11 +7,16 @@ mat-form-field {
     display: block;
 }
 
+.plus,
+.minus {
+    padding: 70px;
+}
+
 .buyer {
     width: 20%;
 }
 
 .basic {
-    display: block;
-    width: 100%;
+    display: inline;
+    width: 800px;
 }
