@@ -11,11 +11,12 @@ export class Buyer {
     studentEuro: number = 0;
     seniorEuro: number = 0;
 
-    finalPrice: number = 0;
+    finalPrice: number;
 
     constructor() {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
+        this.finalPrice = 0;
     }
 }

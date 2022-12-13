@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Buyer } from '../buyer';
 import { TicketService } from '../services/ticket.service';
@@ -27,7 +28,8 @@ export class TicketsComponent implements OnInit {
 
   isChecked: boolean = false;
 
-  constructor(private ticketService: TicketService) {
+  constructor(private ticketService: TicketService, public router: Router) {
+
     this.buyer = new Buyer();
 
     this.buyer.result;
