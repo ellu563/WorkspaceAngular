@@ -1,0 +1,17 @@
+.container {
+    margin: 20px;
+    padding: 30px;
+}
+
+mat-form-field {
+    display: block;
+}
+
+.buyer {
+    width: 20%;
+}
+
+.basic {
+    display: block;
+    width: 100%;
+}

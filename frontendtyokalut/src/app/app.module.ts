@@ -32,6 +32,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
+import { TicketsComponent } from './tickets/tickets.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { environment } from 'src/environments/environment';
     CinemaComponent,
     NewsFilterPipe,
     LoginComponent,
-    AdminComponent
+    AdminComponent,
+    TicketsComponent
   ],
   imports: [
     AppRoutingModule,
