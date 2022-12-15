@@ -4,8 +4,8 @@ import { Observable } from 'rxjs';
 import { Buyer } from '../buyer';
 import { TicketService } from '../services/ticket.service';
 
-/* Lipunvaraus lomake maatalousnayttelyyn, jossa paivittyy summa 
-   Sitä varten tehty varten Buyer class 
+/* Lipunvaraus lomake maatalousnayttelyyn, jossa paivittyy summa.
+   Sitä varten tehty: Buyer class.
    Lopullinen tavoite: lähettää lomake servicelle */
 
 @Component({

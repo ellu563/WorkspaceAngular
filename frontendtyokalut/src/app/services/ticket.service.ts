@@ -7,13 +7,9 @@ import { Buyer } from '../buyer';
 })
 export class TicketService {
 
-  // users: Observable<any>;
-
   constructor() {
   }
 
-  /*onSubmit(): Observable<any> {
-    // return this.users;
-  }*/
+  // tänne lähetetään lomakkeen tiedot
 
 }
