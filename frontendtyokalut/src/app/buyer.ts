@@ -3,13 +3,9 @@ export class Buyer {
     lastName: string;
     email: string;
 
-    result: number = 0;
-    studentresult: number = 0;
-    seniorresult: number = 0;
-
-    basicEuro: number = 0;
-    studentEuro: number = 0;
-    seniorEuro: number = 0;
+    result: number;
+    studentresult: number;
+    seniorresult: number;
 
     finalPrice: number;
 
@@ -17,6 +13,11 @@ export class Buyer {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
+
+        this.result = 0;
+        this.studentresult = 0;
+        this.seniorresult = 0;
+
         this.finalPrice = 0;
     }
 }
