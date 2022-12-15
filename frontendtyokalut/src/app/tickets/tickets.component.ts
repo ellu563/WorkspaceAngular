@@ -74,10 +74,16 @@ export class TicketsComponent implements OnInit {
     }
   }
 
-  // korjattu, huom. vielä ongelma että ottaa kokoajan uudelleen hiiren klikkauksesta
+  // checkboxia varten, jos checkbox chekattu, annetaan 15% ale
   onChange(ob: MatCheckboxChange) {
-    if (ob.checked == true) {
+    if (ob.checked === true) {
       this.buyer.finalPrice = this.buyer.finalPrice * 0.85;
+      console.log("yes it is checked:" + ob.checked)
+    }
+    // jos checkkaus otettu pois, halutaan saada se normi hinta
+    else if (ob.checked === false) {
+      this.buyer.finalPrice = (this.buyer.result * this.basicTicket) + (this.buyer.studentresult * this.studentTicket) + (this.buyer.seniorresult * this.seniorTicket);
+      console.log("false:" + ob.checked);
     }
   }
 

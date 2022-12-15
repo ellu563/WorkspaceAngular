@@ -6,7 +6,7 @@
 
         <div class="tickets">
 
-            <!--huom ei vielä tyhjenna maaraa eika finalpricea-->
+            <!--huom ei vielä tyhjenna maaraa eika finalpricea resetissä-->
 
             <!--peruslippu-->
             <div class="basic">
@@ -68,7 +68,7 @@
 
             <!--lopullinen summa ostoille-->
             <mat-form-field appearance="fill">
-                <input matInput type="number" class="example-right-align" placeholder="0" name="finalPrice"
+                <input matInput type="number" class="example-right-align" name="finalPrice"
                     [(ngModel)]="buyer.finalPrice" [ngModelOptions]="{standalone: true}" #finalprice="ngModel">
                 <!--sidonta ei toimi ilman ngModelOptions-->
             </mat-form-field>
