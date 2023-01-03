@@ -1,4 +1,4 @@
-## Angular-projekteja
+## Angular-projects - angular projekteja
 
-#### Kloonaa projekti omalle koneelle: git clone https://github.com/ellu563/WorkspaceAngular.git
-#### Asenna tarvittavat paketit: npm install
+#### Calculator, Feedback, Tickets, Login/Admin page (with Firebase authentication), Template form and reactive form, Finnkino's news from their API etc
+##### Some projects still *in the works*
