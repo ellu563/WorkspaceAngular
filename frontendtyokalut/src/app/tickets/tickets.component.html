@@ -6,19 +6,17 @@
 
         <div class="tickets">
 
-            <!--huom ei vielä tyhjenna maaraa eika finalpricea resetissä-->
-
             <!--peruslippu-->
             <div class="basic">
                 <h2>Peruslippu</h2>
                 <mat-grid-list cols="4" rowHeight="100px">
                     <mat-grid-tile>
-                        <div class="plus">
-                            <button type="button" mat-fab color="accent" (click)="addValue('+')">+</button>
-                        </div>
-                        <p>{{buyer.result}}</p>
                         <div class="minus">
                             <button type="button" mat-fab color="accent" (click)="addValue('-')">-</button>
+                        </div>
+                        <p>{{buyer.result}}</p>
+                        <div class="plus">
+                            <button type="button" mat-fab color="accent" (click)="addValue('+')">+</button>
                         </div>
                     </mat-grid-tile>
                 </mat-grid-list>
@@ -29,12 +27,12 @@
                 <h2>Opiskelijalippu</h2>
                 <mat-grid-list cols="4" rowHeight="100px">
                     <mat-grid-tile>
-                        <div class="plus">
-                            <button type="button" mat-fab color="accent" (click)="addValueStudent('+')">+</button>
-                        </div>
-                        <p>{{buyer.studentresult}}</p>
                         <div class="minus">
                             <button type="button" mat-fab color="accent" (click)="addValueStudent('-')">-</button>
+                        </div>
+                        <p>{{buyer.studentresult}}</p>
+                        <div class="plus">
+                            <button type="button" mat-fab color="accent" (click)="addValueStudent('+')">+</button>
                         </div>
                     </mat-grid-tile>
                 </mat-grid-list>
@@ -45,13 +43,13 @@
                 <h2>Seniorilippu</h2>
                 <mat-grid-list cols="4" rowHeight="100px">
                     <mat-grid-tile>
+                        <div class="minus">
+                            <button type="button" mat-fab color="accent" (click)="addValueSenior('-')">-</button>
+                        </div>
+                        <p>{{buyer.seniorresult}}</p>
                         <div class="plus">
                             <!--type: button, jotta ei laheta form dataa-->
                             <button type="button" mat-fab color="accent" (click)="addValueSenior('+')">+</button>
-                        </div>
-                        <p>{{buyer.seniorresult}}</p>
-                        <div class="minus">
-                            <button type="button" mat-fab color="accent" (click)="addValueSenior('-')">-</button>
                         </div>
                     </mat-grid-tile>
                 </mat-grid-list>
@@ -68,9 +66,9 @@
 
             <!--lopullinen summa ostoille-->
             <mat-form-field appearance="fill">
-                <input matInput type="number" class="example-right-align" name="finalPrice"
-                    [(ngModel)]="buyer.finalPrice" [ngModelOptions]="{standalone: true}" #finalprice="ngModel">
-                <!--sidonta ei toimi ilman ngModelOptions-->
+                <input matInput type="number" placeholder="0" class="example-right-align" name="finalPrice"
+                    [(ngModel)]="buyer.finalPrice" #finalPrice="ngModel">
+                <!--sidonta ei jossain vaiheessa toiminut ilman ngModelOptions [ngModelOptions]="{standalone: true}" joka nyt poistettu input rivilta-->
             </mat-form-field>
 
             <h2>Täytä tilaajan tiedot</h2>
@@ -104,7 +102,7 @@
                 <mat-error *ngIf="email.hasError('pattern')">Must be valid email</mat-error>
             </mat-form-field>
 
-            <button type="submit" mat-raised-button color="accent" [disabled]="form1.invalid">Osta liput</button>
+            <button type="submit" mat-raised-button color="accent" [disabled]="form1.invalid">OSTA LIPUT</button>
 
         </div>
 

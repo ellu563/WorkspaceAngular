@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCheckboxChange } from '@angular/material/checkbox';
-import { Observable } from 'rxjs';
 import { Buyer } from '../buyer';
 import { TicketService } from '../services/ticket.service';
 
 /* Lipunvaraus lomake maatalousnayttelyyn, jossa paivittyy summa.
    Sitä varten tehty: Buyer class.
-   Lopullinen tavoite: lähettää lomake servicelle */
+   Lopullinen tavoite: lähettää lomakkeen tiedot servicelle */
 
 @Component({
   selector: 'app-tickets',
@@ -33,6 +32,7 @@ export class TicketsComponent implements OnInit {
     this.buyer.studentresult;
     this.buyer.seniorresult;
     this.buyer.finalPrice;
+
   }
 
   ngOnInit(): void {
@@ -87,12 +87,22 @@ export class TicketsComponent implements OnInit {
     }
   }
 
-  // tulostetaan nyt submitista tiedot konsoliin
+  // lahetys
   onSubmit(e: any) {
-    console.log("Lopullinen hinta: " + this.buyer.finalPrice + " €");
+    // nollataan myös määrätiedot lahetyksen jälkeen
+    this.buyer.result = 0;
+    this.buyer.studentresult = 0;
+    this.buyer.seniorresult = 0;
+
+    // lähetetään servicelle
+    this.ticketService.onSubmit(e.value);
+
+    /* tulostetaan tiedot konsoliin
+    console.log("Lopullinen hinta: " + e.value.finalPrice + " €");
     console.log("Etunimi: " + e.value.firstName);
     console.log("Sukunimi: " + e.value.lastName);
     console.log("Sahkopostiosoite: " + e.value.email);
+    */
   }
 
 }

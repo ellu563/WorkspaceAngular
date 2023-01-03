@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Buyer } from '../buyer';
+
+// ticket - lomakkeen tiedot lahetetaan tanne
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +10,12 @@ export class TicketService {
   constructor() {
   }
 
-  // tänne lähetetään lomakkeen tiedot
+  onSubmit(e: any) {
+    let finalPrice = e.finalPrice;
+    let firstName = e.firstName;
+    let lastName = e.lastName;
+    let email = e.email;
+    console.log("Lomakkeen tiedot service luokasta: Lopullinen hinta " + finalPrice + "€, Etunimi: " + firstName + ", Sukunimi: " + lastName + ", Sahkopostiosoite: " + email);
+  }
 
 }
