@@ -29,10 +29,21 @@ export class AuthService {
         // console.log("toimii");
         this.router.navigate(['admin']);
       })
-      .catch((error) => {
-        console.log(error.message)
-        alert("Wrong credentials")
+      .catch(function (error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode === 'auth/wrong-password') {
+          alert('Wrong password');
+        } else {
+          alert("Wrong email");
+        }
+        console.log(errorMessage);
       });
+    /*.catch((error) => {
+      console.log(error.message)
+      alert("Wrong credentials")
+    });*/
   }
 
   logout(): void {
