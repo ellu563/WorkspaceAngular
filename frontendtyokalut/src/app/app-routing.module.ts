@@ -5,6 +5,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { CinemaComponent } from './cinema/cinema.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { FormComponent } from './form/form.component';
+import { LoanComponent } from './loan/loan.component';
 import { LoginComponent } from './login/login.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { AuthGuard } from './shared/auth.guard';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
   { path: 'tickets', component: TicketsComponent },
+  { path: 'loan', component: LoanComponent },
 ];
 
 @NgModule({

@@ -33,6 +33,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
 import { TicketsComponent } from './tickets/tickets.component';
+import { LoanComponent } from './loan/loan.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { TicketsComponent } from './tickets/tickets.component';
     NewsFilterPipe,
     LoginComponent,
     AdminComponent,
-    TicketsComponent
+    TicketsComponent,
+    LoanComponent
   ],
   imports: [
     AppRoutingModule,
