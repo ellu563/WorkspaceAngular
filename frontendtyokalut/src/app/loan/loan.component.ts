@@ -65,8 +65,11 @@ export class LoanComponent implements OnInit {
     // this.loaner.calculate = Math.round((this.time * this.amount) + this.interest);
     // esimerkkiä katsoessani otan kuitenkin siitä matemaattisen mallin
     // ja laitan sen näin
-    this.loaner.calculate = (this.interest).toFixed(2);
-  }
+    if (this.time >= 1 && this.amount >= 500) {// laitetaan vielä ehto
+      // niin saadaan summa vasta kun molemmat dokumentissa annetut arvot on ylittyneet
 
+      this.loaner.calculate = (this.interest).toFixed(2);
+    }
+  }
 
 }
